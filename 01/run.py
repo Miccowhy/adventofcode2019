@@ -5,10 +5,7 @@ fuel_count = lambda x: math.floor(x / 3) - 2
 
 def calculate_fuel_recursion(atomic_mass):
     atomic_mass = fuel_count(atomic_mass)
-    if atomic_mass <= 0:
-        return 0
-    else:
-        return atomic_mass + calculate_fuel_recursion(atomic_mass)
+    return atomic_mass + calculate_fuel_recursion(atomic_mass) if atomic_mass > 0 else 0
 
 
 def calculate_fuel_requirement():
