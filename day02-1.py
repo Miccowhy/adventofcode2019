@@ -9,7 +9,8 @@ operator = {1: operator.add,
 list[1] = 12
 list[2] = 2
 
-while list[i:= i+4] != 99:
+while i := i+4:
+    if list[i] == 99: break
     list[list[i+3]] = operator[list[i]](list[list[i+1]], list[list[i+2])
 
 print(list[0])
