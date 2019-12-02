@@ -12,6 +12,6 @@ Tasks will probably be solved mostly in Python, but I'll try to play with other 
 
 **Emphasized** language was the first solution.
 
-## Languages used summary
+## Summary of languages used
 + Python
 + Julia

@@ -4,7 +4,7 @@
 
 import operator
 
-task_input = open("input/02").read().rstrip().split(",")
+task_input = open("input").read().rstrip().split(",")
 task_input = [int(element) for element in task_input]
 operator = {1: operator.add,
             2: operator.mul}

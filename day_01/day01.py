@@ -3,7 +3,7 @@
 # Day 1
 
 fuel_count = lambda x: x // 3 - 2
-mass = [int(element) for element in open("input/01").read().splitlines()]
+mass = [int(element) for element in open("input").read().splitlines()]
 
 
 def calculate_fuel_recursion(atomic_mass: int):
