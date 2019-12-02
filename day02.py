@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import operator
 
-list = open("src/02").read().rstrip().split(",")
+list = open("input/02").read().rstrip().split(",")
 list = [int(element) for element in list]
 i = 0
 operator = {1: operator.add,

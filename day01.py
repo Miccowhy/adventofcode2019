@@ -11,7 +11,7 @@ def calculate_fuel_recursion(atomic_mass):
 def calculate_fuel_requirement():
     module_mass_fuel = 0
     whole_fuel = 0
-    with open("src/01", "r") as file_in:
+    with open("input/01", "r") as file_in:
         for mass in file_in:
             module_mass_fuel += fuel_count(int(mass))
             whole_fuel += calculate_fuel_recursion(int(mass))
