@@ -1,15 +1,41 @@
 #!/usr/bin/python3
+
+# Advent of Code 2019
+# Day 2
+
 import operator
 
-list = open("input/02").read().rstrip().split(",")
-list = [int(element) for element in list]
-i = 0
+task_input = open("input/02").read().rstrip().split(",")
+task_input = [int(element) for element in task_input]
 operator = {1: operator.add,
     2: operator.mul}
-list[1] = 12
-list[2] = 2
 
-while list[i] != 99:
-    list[list[i+3]] = operator[list[i]](list[list[i+1]], list[list[i+2]])
-    i += 4
-print(list[0])
+
+def intcode(noun, verb):
+    num = task_input.copy()
+    num[1] = noun
+    num[2] = verb
+    i = 0
+    while num[i] != 99 and i <= len(num):
+        num[num[i+3]] = operator[num[i]](num[num[i+1]], num[num[i+2]])
+        i += 4
+    return num[0]
+
+
+def intcode_iterate():
+    for noun in range(100):
+        for verb in range(100):
+            val = 100 * noun + verb if intcode(noun, verb) == 19690720 else None
+            if val is not None:
+                return val
+
+
+if __name__ == "__main__":
+    # Task 1
+    print(intcode(2, 12))
+
+    # Task 2
+    print(intcode_iterate())
+
+
+
