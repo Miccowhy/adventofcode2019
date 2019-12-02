@@ -1,6 +1,9 @@
-import math
+#!/usr/bin/python3
 
-fuel_count = lambda x: math.floor(x / 3) - 2
+# Advent of Code 2019
+# Day 1
+
+fuel_count = lambda x: x // 3 - 2
 
 
 def calculate_fuel_recursion(atomic_mass):
