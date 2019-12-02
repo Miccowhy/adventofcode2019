@@ -32,7 +32,7 @@ def intcode_iterate():
 
 if __name__ == "__main__":
     # Task 1
-    print(intcode(2, 12))
+    print(intcode(12, 2))
 
     # Task 2
     print(intcode_iterate())
