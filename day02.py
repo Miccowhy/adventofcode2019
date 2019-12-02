@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 # Advent of Code 2019
 # Day 2
 
@@ -8,10 +7,10 @@ import operator
 task_input = open("input/02").read().rstrip().split(",")
 task_input = [int(element) for element in task_input]
 operator = {1: operator.add,
-    2: operator.mul}
+            2: operator.mul}
 
 
-def intcode(noun, verb):
+def intcode(noun: int, verb: int):
     num = task_input.copy()
     num[1] = noun
     num[2] = verb
@@ -22,10 +21,10 @@ def intcode(noun, verb):
     return num[0]
 
 
-def intcode_iterate():
+def intcode_iterate(stop_value: int):
     for noun in range(100):
         for verb in range(100):
-            val = 100 * noun + verb if intcode(noun, verb) == 19690720 else None
+            val = 100 * noun + verb if intcode(noun, verb) == stop_value else None
             if val is not None:
                 return val
 
@@ -35,7 +34,4 @@ if __name__ == "__main__":
     print(intcode(12, 2))
 
     # Task 2
-    print(intcode_iterate())
-
-
-
+    print(intcode_iterate(19690720))
