@@ -39,5 +39,3 @@ if __name__ == "__main__":
     wires = unpack_paths(open("input").read())
     print(f"Manhattan distance: {closest_manhattan_distance(wires[0], wires[1])}")
     print(f"Step count: {step_count(wires[0], wires[1])}")
-
-
