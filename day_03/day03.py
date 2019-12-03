@@ -7,10 +7,12 @@ from typing import Set, Tuple, List
 split_data = lambda x: [element.split(",") for element in x.splitlines()]
 
 closest_manhattan_distance = lambda first, second: min(
-    [abs(intersection[0]) + abs(intersection[1]) for intersection in set(first) & set(second) if intersection != (0, 0)])
+    (abs(intersection[0]) + abs(intersection[1])
+     for intersection in set(first) & set(second) if intersection != (0, 0)))
 
 step_count = lambda first, second: min(
-    [first.index(intersection) + second.index(intersection) for intersection in set(first) & set(second) if intersection != (0, 0)])
+    (first.index(intersection) + second.index(intersection)
+     for intersection in set(first) & set(second) if intersection != (0, 0)))
 
 
 def path(moves: List[str]):
@@ -19,7 +21,7 @@ def path(moves: List[str]):
     for move in moves:
         previous = wiring[-1]
         if move[0] == "R":                                                                          # RIGHT
-            [wiring.append((previous[0] + x, wiring[-1][1])) for x in range(1, int(move[1:]) + 1)]
+            [wiring.append((previous[0] + x, previous[1])) for x in range(1, int(move[1:]) + 1)]
         elif move[0] == "L":                                                                        # LEFT
             [wiring.append((previous[0] - x, previous[1])) for x in range(1, int(move[1:]) + 1)]
         elif move[0] == "U":                                                                        # UP
