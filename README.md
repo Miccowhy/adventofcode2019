@@ -9,6 +9,7 @@ Tasks will probably be solved mostly in Python, but I'll try to play with other 
 |-------|:----------:|----------:|
 | Day 1 | ⭐⭐ | **Python**, Julia |
 | Day 2 | ⭐⭐ | **Python** |
+| Day 2 | ⭐ | **Python** |
 
 **Emphasized** language was the first solution.
 
