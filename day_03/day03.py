@@ -2,7 +2,7 @@
 # Advent of Code 2019
 # Day 3
 
-from typing import Set, Tuple, List
+from typing import Tuple, List
 
 split_data = lambda x: [element.split(",") for element in x.splitlines()]
 
@@ -16,18 +16,13 @@ step_count = lambda first, second: min(
 
 
 def path(moves: List[str]):
+    directions = {"R": 1, "L": -1, "U": 1j, "D": -1j}
     wiring: List[Tuple[int, int]] = [(0, 0)]
 
     for move in moves:
-        previous = wiring[-1]
-        if move[0] == "R":                                                                          # RIGHT
-            [wiring.append((previous[0] + x, previous[1])) for x in range(1, int(move[1:]) + 1)]
-        elif move[0] == "L":                                                                        # LEFT
-            [wiring.append((previous[0] - x, previous[1])) for x in range(1, int(move[1:]) + 1)]
-        elif move[0] == "U":                                                                        # UP
-            [wiring.append((previous[0], previous[1] + y)) for y in range(1, int(move[1:]) + 1)]
-        elif move[0] == "D":                                                                        # DOWN
-            [wiring.append((previous[0], previous[1] - y)) for y in range(1, int(move[1:]) + 1)]
+        [wiring.append((wiring[-1][0] + int(directions[move[0]].real),
+                        wiring[-1][1] + int(directions[move[0]].imag)))
+         for _ in range(int(move[1:]))]
 
     return wiring
 
