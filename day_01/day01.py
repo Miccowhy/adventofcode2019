@@ -12,6 +12,6 @@ def calculate_fuel_recursion(atomic_mass: int):
 
 if __name__ == "__main__":
     print(f"""
-    Module fuel requirement: {sum([fuel_count(element) for element in mass])}
-    Full fuel requirement: {sum([calculate_fuel_recursion(fuel_count(element)) for element in mass])}
+    Module fuel requirement: {sum((fuel_count(element) for element in mass))}
+    Full fuel requirement: {sum((calculate_fuel_recursion(fuel_count(element)) for element in mass))}
     """)
