@@ -19,7 +19,7 @@ K)L"""
         day06.set_orbits(data)
 
     def test_task1(self):
-        self.assertEqual(42, day06.task1_run())
+        self.assertEqual(42, day06.sum_all_orbits())
 
 
 class Task2Test(unittest.TestCase):
@@ -39,5 +39,5 @@ K)YOU
 I)SAN"""
         day06.set_orbits(data)
 
-#    def test_task2(self):
-#        self.assertEqual(42, day06.task1_run())
+    def test_task2(self):
+        self.assertEqual(4, day06.compute_distance_between())
