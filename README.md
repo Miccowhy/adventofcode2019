@@ -11,7 +11,7 @@ Tasks will probably be solved mostly in Python, but I'll try to play with other 
 | Day 2 | ⭐⭐ | **Python**, Julia |
 | Day 3 | ⭐⭐ | **Python** |
 | Day 4 | ⭐⭐ | **Julia** |
-| Day 5 | | |
+| Day 5 | ⭐ | **Python** |
 | Day 6 | ⭐⭐ | **Python** |
 
 **Emphasized** language was the first solution.
