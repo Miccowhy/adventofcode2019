@@ -8,9 +8,12 @@ from collections import deque
 task_input = open("input").read().rstrip().split(",")
 task_input = [int(element) for element in task_input]
 
+#task_input = [3, 21, 1008, 21, 8, 20, 1005, 20, 22, 107, 8, 21, 20, 1006, 20, 31,
+#              1106, 0, 36, 98, 0, 0, 1002, 21, 125, 20, 4, 20, 1105, 1, 46, 104,
+#              999, 1105, 1, 46, 1101, 1000, 1, 20, 4, 20, 1105, 1, 46, 98, 99]
 
 def write_input(value, *_):
-    data[value] = "5"  # 1: 1, 2: 5
+    data[value] = input()  # 1: 1, 2: 5
 
 
 def output_parameter(value, *_):
@@ -38,11 +41,11 @@ def intcode(data):
         c, b, a = [int(i + 3 - digit) if int(opcode[digit]) else int(data[i + 3 - digit]) for digit in range(3)]
 
         if opcode[-1] == '1':
-            data[c] = instruction[1](data[a], data[b])
+            data[c] = instruction[1](int(data[a]), int(data[b]))
             if c != i:
                 i += 4
         elif opcode[-1] == '2':
-            data[c] = instruction[2](data[a], data[b])
+            data[c] = instruction[2](int(data[a]), int(data[b]))
             if c != i:
                 i += 4
         elif opcode[-1] == '3':
@@ -55,20 +58,20 @@ def intcode(data):
 
         elif opcode[-1] == '5':
             if data[a]:
-                data[i] = data[b]
+                i = data[b]
             else:
                 i += 3
         elif opcode[-1] == '6':
-            if not data[a]:
-                data[i] = data[b]
+            if not int(data[a]):
+                i = int(data[b])
             else:
                 i += 3
         elif opcode[-1] == '7':
-            data[c] = 1 if data[a] < data[b] else 0
+            data[c] = 1 if int(data[a]) < int(data[b]) else 0
             if c != i:
                 i += 4
         elif opcode[-1] == '8':
-            data[c] = 1 if data[a] == data[b] else 0
+            data[c] = 1 if int(data[a]) == int(data[b]) else 0
             if c != i:
                 i += 4
 
