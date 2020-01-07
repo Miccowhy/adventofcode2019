@@ -7,7 +7,7 @@ Tasks will probably be solved mostly in Python, but I'll try to play with other 
 ## Completion
 | Day   | Completion | Languages |
 |-------|:----------:|----------:|
-| Day 1 | ⭐⭐ | **Python**, Julia |
+| Day 1 | ⭐⭐ | **Python**, Julia, Perl |
 | Day 2 | ⭐⭐ | **Python**, Julia |
 | Day 3 | ⭐⭐ | **Python** |
 | Day 4 | ⭐⭐ | **Julia** |
@@ -20,3 +20,5 @@ Tasks will probably be solved mostly in Python, but I'll try to play with other 
 ## Summary of languages used
 + Python
 + Julia
++ Perl
+
